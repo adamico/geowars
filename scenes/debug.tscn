@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://u3ae0etdrnyw"]
+
+[ext_resource type="Script" path="res://scenes/debug.gd" id="1_gtokt"]
+
+[node name="DebugLayer" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_gtokt")
+
+[node name="DebugBox" type="TextEdit" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -903.0
+offset_bottom = -493.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="DebugParams" type="VBoxContainer" parent="DebugBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FPS" type="HBoxContainer" parent="DebugBox/DebugParams"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="FPSLabel" type="Label" parent="DebugBox/DebugParams/FPS"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "FPS:"
+
+[node name="FPSValue" type="Label" parent="DebugBox/DebugParams/FPS"]
+layout_mode = 2
+
+[node name="CharacterState" type="HBoxContainer" parent="DebugBox/DebugParams"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CSLabel" type="Label" parent="DebugBox/DebugParams/CharacterState"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "State:"
+
+[node name="CSValue" type="Label" parent="DebugBox/DebugParams/CharacterState"]
+layout_mode = 2
+
+[node name="CaptureTime" type="HBoxContainer" parent="DebugBox/DebugParams"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CTLabel" type="Label" parent="DebugBox/DebugParams/CaptureTime"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "CaptureTime:"
+
+[node name="CTValue" type="Label" parent="DebugBox/DebugParams/CaptureTime"]
+layout_mode = 2
