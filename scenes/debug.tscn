@@ -1,24 +1,31 @@
 [gd_scene load_steps=2 format=3 uid="uid://u3ae0etdrnyw"]
 
-[ext_resource type="Script" path="res://scenes/debug.gd" id="1_gtokt"]
+[ext_resource type="Script" path="res://scripts/debug.gd" id="1_gtokt"]
 
 [node name="DebugLayer" type="CanvasLayer"]
 layer = 128
 script = ExtResource("1_gtokt")
 
-[node name="DebugBox" type="TextEdit" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 244.0
+offset_bottom = 117.0
+
+[node name="DebugBox" type="TextEdit" parent="Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = -903.0
-offset_bottom = -493.0
+offset_right = -15.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 
-[node name="DebugParams" type="VBoxContainer" parent="DebugBox"]
+[node name="DebugParams" type="VBoxContainer" parent="Control/DebugBox"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,38 +37,50 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FPS" type="HBoxContainer" parent="DebugBox/DebugParams"]
+[node name="CharacterState" type="HBoxContainer" parent="Control/DebugBox/DebugParams"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="FPSLabel" type="Label" parent="DebugBox/DebugParams/FPS"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "FPS:"
-
-[node name="FPSValue" type="Label" parent="DebugBox/DebugParams/FPS"]
-layout_mode = 2
-
-[node name="CharacterState" type="HBoxContainer" parent="DebugBox/DebugParams"]
-layout_mode = 2
-theme_override_constants/separation = 5
-
-[node name="CSLabel" type="Label" parent="DebugBox/DebugParams/CharacterState"]
+[node name="CSLabel" type="Label" parent="Control/DebugBox/DebugParams/CharacterState"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "State:"
 
-[node name="CSValue" type="Label" parent="DebugBox/DebugParams/CharacterState"]
+[node name="CSValue" type="Label" parent="Control/DebugBox/DebugParams/CharacterState"]
 layout_mode = 2
 
-[node name="CaptureTime" type="HBoxContainer" parent="DebugBox/DebugParams"]
+[node name="CaptureTime" type="HBoxContainer" parent="Control/DebugBox/DebugParams"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="CTLabel" type="Label" parent="DebugBox/DebugParams/CaptureTime"]
+[node name="CTLabel" type="Label" parent="Control/DebugBox/DebugParams/CaptureTime"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "CaptureTime:"
 
-[node name="CTValue" type="Label" parent="DebugBox/DebugParams/CaptureTime"]
+[node name="CTValue" type="Label" parent="Control/DebugBox/DebugParams/CaptureTime"]
+layout_mode = 2
+
+[node name="CellPositionX" type="HBoxContainer" parent="Control/DebugBox/DebugParams"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CPXLabel" type="Label" parent="Control/DebugBox/DebugParams/CellPositionX"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "X:"
+
+[node name="CPXValue" type="Label" parent="Control/DebugBox/DebugParams/CellPositionX"]
+layout_mode = 2
+
+[node name="CellPositionY" type="HBoxContainer" parent="Control/DebugBox/DebugParams"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CPYLabel" type="Label" parent="Control/DebugBox/DebugParams/CellPositionY"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Y:"
+
+[node name="CPYValue" type="Label" parent="Control/DebugBox/DebugParams/CellPositionY"]
 layout_mode = 2

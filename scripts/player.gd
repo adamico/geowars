@@ -1,10 +1,15 @@
 extends Area2D
 
-var animation_speed = 4
-var moving = false
-var capturing = false
 
+var moving: bool = false
+var capturing: bool = false
+var capture_time: float = 0.0
+
+@export var animation_speed: int = 4
 @export var tile_size: int
+@export var capture_speed_multiplier = 1
+@export var capture_duration: int = 3 / capture_speed_multiplier
+
 var inputs = {
 	"right": Vector2.RIGHT,
 	"left": Vector2.LEFT,
@@ -13,18 +18,27 @@ var inputs = {
 }
 
 @onready var ray = $RayCast2d
+@onready var capture_scene = preload("res://scenes/capture.tscn")
 
 func _process(delta):
 	if !moving && !capturing: Debug.SetCharacterState("Idle")
+	capturing = Input.is_action_pressed("capture")
+	
+	if capturing:
+		capture_time += delta
+		Debug.SetCharacterState("Capturing")
+
+		if capture_time - capture_duration >= 0:
+			capture_time = 0
+		Debug.SetCaptureTime(round(capture_time))
+	else:
+		capture_time = 0
 
 func _unhandled_input(event):
 	if !moving:
 		for dir in inputs.keys():
 			if event.is_action_pressed(dir): move(dir)
 
-	if event.is_action_pressed("capture"): capture()
-	if event.is_action_released("capture"): capturing = false
-		
 func move(dir):
 	Debug.SetCharacterState("Moving " + dir)
 	ray.target_position = inputs[dir] * tile_size
@@ -37,9 +51,9 @@ func move(dir):
 		#$AnimationPlayer.play(dir)
 		await tween.finished
 		moving = false
+		Debug.SetCellPosition(global_position, tile_size)
 
 func capture():
-	# check if can capture current tile
-	capturing = true
-	Debug.SetCharacterState("Capturing")
-	
+	var capture = capture_scene.instantiate()
+	capture.setup(global_position, capture_duration)
+	get_node(^"../World").add_sibling(capture)

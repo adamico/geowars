@@ -280,10 +280,10 @@ sources/4 = SubResource("TileSetAtlasSource_jprxf")
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1j54n")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -291,7 +291,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="World" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="TileMap" type="TileMap" parent="World"]
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_64bv4")
 rendering_quadrant_size = 32

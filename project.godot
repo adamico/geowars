@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="grid_movement"
+config/name="Geowars"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.svg"
@@ -18,12 +18,17 @@ config/icon="res://icon.svg"
 [autoload]
 
 Debug="*res://scenes/debug.tscn"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
 [display]
 
 window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 window/dpi/allow_hidpi=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
 
 [input]
 
