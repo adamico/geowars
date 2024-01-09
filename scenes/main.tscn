@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://nnjkpa1rm758"]
 
-[ext_resource type="Script" path="res://scripts/Main.gd" id="1_1j54n"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_1j54n"]
 [ext_resource type="PackedScene" uid="uid://b0wysm6c2nqgj" path="res://scenes/player.tscn" id="2_ia34y"]
 [ext_resource type="Texture2D" uid="uid://bnqnb2kcx6aey" path="res://assets/tilemap_grayscale_2.png" id="3_x36ip"]
 
@@ -142,6 +142,7 @@ separation = Vector2i(1, 1)
 4:3/0 = 0
 4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/next_alternative_id = 3
 5:3/0 = 0
 5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:3/0/physics_layer_0/angular_velocity = 0.0
@@ -294,6 +295,7 @@ color = Color(0, 0, 0, 1)
 [node name="World" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="World"]
+modulate = Color(0.615686, 0.615686, 0.615686, 1)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_64bv4")
 rendering_quadrant_size = 32

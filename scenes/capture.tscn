@@ -7,4 +7,4 @@ script = ExtResource("1_vkj6o")
 
 [node name="CaptureSquare" type="Polygon2D" parent="."]
 color = Color(1, 0, 0, 0.580392)
-polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+polygon = PackedVector2Array(-28, -28, 28, -28, 28, 28, -28, 28)

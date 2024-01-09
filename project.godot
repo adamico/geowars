@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Debug="*res://scenes/debug.tscn"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 Data="*res://scenes/data.tscn"
+Gui="*res://scenes/gui.tscn"
 
 [display]
 
