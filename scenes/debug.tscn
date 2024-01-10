@@ -4,7 +4,6 @@
 
 [node name="DebugLayer" type="CanvasLayer"]
 layer = 128
-visible = false
 script = ExtResource("1_gtokt")
 
 [node name="Control" type="Control" parent="."]

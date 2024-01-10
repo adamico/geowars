@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1rxhm48883ia"]
+
+[ext_resource type="Script" path="res://scripts/movement_validation.gd" id="1_od5ay"]
+
+[node name="MovementValidation" type="RayCast2D"]
+target_position = Vector2(0, 16)
+collide_with_areas = true
+script = ExtResource("1_od5ay")

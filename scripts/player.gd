@@ -1,4 +1,5 @@
-extends Area2D
+extends CharacterBody2D
+
 class_name Player
 
 signal captured(player_number, capture, pos)
@@ -12,6 +13,9 @@ signal captured(player_number, capture, pos)
 @export var capturing: bool = false
 @export var moving: bool = false
 
+@onready var movement_validation: RayCast2D = $MovementValidation
+@onready var movement_tween: Node = $MovementTween
+
 var inputs = {
 	"right": Vector2.RIGHT,
 	"left": Vector2.LEFT,
@@ -19,23 +23,17 @@ var inputs = {
 	"down": Vector2.DOWN
 }
 
-@onready var ray = $RayCast2d
-
 func _unhandled_input(event):
 	if !moving and !capturing:
 		for dir in inputs.keys():
 			if event.is_action_pressed(dir): move(dir)
 
 func move(dir):
-	ray.target_position = inputs[dir] * tile_size
-	ray.force_raycast_update()
-	
-	if !ray.is_colliding():
-		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position",
-			position + inputs[dir] * tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
+	if movement_validation.validate_movement(inputs[dir] * tile_size):
 		moving = true
+		movement_tween.move_time = 1.0/animation_speed
 		#$AnimationPlayer.play(dir)
-		await tween.finished
+		movement_tween.run(self, position + inputs[dir] * tile_size)
+		await movement_tween.tween.finished
 		moving = false
 		Debug.SetCellPosition(global_position, tile_size)
