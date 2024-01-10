@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0wysm6c2nqgj"]
+[gd_scene load_steps=10 format=3 uid="uid://b0wysm6c2nqgj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_26y8w"]
 [ext_resource type="PackedScene" uid="uid://1rxhm48883ia" path="res://scenes/movement_validation.tscn" id="2_cv3n4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cngbmkmlpxf37" path="res://scenes/movement_tween.tscn" id="3_33dm8"]
 [ext_resource type="Script" path="res://scripts/states/player_idle.gd" id="4_e6dwd"]
 [ext_resource type="Script" path="res://scripts/states/player_capture.gd" id="5_2q65y"]
+[ext_resource type="Script" path="res://scripts/states/player_move.gd" id="8_sttbk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tia2a"]
 size = Vector2(32, 32)
@@ -15,8 +16,10 @@ size = Vector2(32, 32)
 script = ExtResource("1_26y8w")
 
 [node name="MovementValidation" parent="." instance=ExtResource("2_cv3n4")]
+unique_name_in_owner = true
 
 [node name="MovementTween" parent="." instance=ExtResource("3_33dm8")]
+unique_name_in_owner = true
 
 [node name="CollisionShape2d" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tia2a")
@@ -35,6 +38,10 @@ player = NodePath("../..")
 
 [node name="Capture" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
 script = ExtResource("5_2q65y")
+player = NodePath("../..")
+
+[node name="Move" type="Node" parent="StateMachine" node_paths=PackedStringArray("player")]
+script = ExtResource("8_sttbk")
 player = NodePath("../..")
 
 [node name="CaptureAction" type="Node2D" parent="."]
