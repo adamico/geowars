@@ -16,7 +16,11 @@ func Enter():
 
 func Physics_Update(_delta: float):
 	for key in inputs.keys():
-		if Input.is_action_pressed(key): Transitioned.emit(self, "move")
+		if Input.is_action_pressed(key):
+			if Input.is_action_pressed("shoot"):
+				Transitioned.emit(self, "shoot")
+			else:
+				Transitioned.emit(self, "move")
 		
 	if Input.is_action_pressed("capture") and can_capture():
 		Transitioned.emit(self, "capture")
