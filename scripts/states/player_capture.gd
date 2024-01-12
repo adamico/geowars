@@ -1,9 +1,8 @@
-extends State
 class_name PlayerCapture
-
-@onready var Capture = preload("res://scenes/capture.tscn")
+extends State
 
 @export var player: Player
+@onready var Capture = preload("res://scenes/capture.tscn")
 
 func Enter():
 	if player:
@@ -11,8 +10,10 @@ func Enter():
 		player.capture_time = player.capture_duration
 		Debug.SetCharacterState("Capturing")
 
+
 func Exit():
 	%CaptureAction.hide()
+
 
 func Physics_Update(delta: float):
 	%CaptureAction.show()
@@ -22,11 +23,11 @@ func Physics_Update(delta: float):
 		
 	if player.capture_time > 0:
 		player.capture_time -= delta
-		var exp = (player.capture_duration-player.capture_time)/player.capture_duration
-		%Up.scale = Vector2(exp, 1)
-		%Down.scale = Vector2(exp, 1)
-		%Right.scale = Vector2(1, exp)
-		%Left.scale = Vector2(1, exp)
+		var expression = (player.capture_duration-player.capture_time)/player.capture_duration
+		%Up.scale = Vector2(expression, 1)
+		%Down.scale = Vector2(expression, 1)
+		%Right.scale = Vector2(1, expression)
+		%Left.scale = Vector2(1, expression)
 	else:
 		player.captured.emit(player.player_number, Capture, player.position)
 		player.capture_time = 3

@@ -11,6 +11,7 @@ extends Node
 	"TRANS_CIRC",
 	"TRANS_BOUNCE",
 	"TRANS_BACK") var transition : int
+	
 @export_enum("EASE_IN",
 	"EASE_OUT",
 	"EASE_IN_OUT",

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_26y8w"]
 [ext_resource type="PackedScene" uid="uid://1rxhm48883ia" path="res://scenes/movement_validation.tscn" id="2_cv3n4"]
-[ext_resource type="Texture2D" uid="uid://cd4m242wmxtmy" path="res://assets/geo_character.png" id="2_exma2"]
+[ext_resource type="Texture2D" uid="uid://cd4m242wmxtmy" path="res://assets/sprites/geo_character.png" id="2_exma2"]
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="3_0xjhf"]
 [ext_resource type="PackedScene" uid="uid://cngbmkmlpxf37" path="res://scenes/movement_tween.tscn" id="3_33dm8"]
 [ext_resource type="Script" path="res://scripts/states/player_idle.gd" id="4_e6dwd"]
@@ -14,6 +14,7 @@
 size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_26y8w")
 
 [node name="MovementValidation" parent="." instance=ExtResource("2_cv3n4")]
@@ -87,3 +88,6 @@ offset_top = -28.0
 offset_right = 28.0
 offset_bottom = 24.0
 scale = Vector2(1e-05, 1e-05)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

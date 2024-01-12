@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://g8tbyaq2amd3"]
+[gd_scene load_steps=2 format=3 uid="uid://g8tbyaq2amd3"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_37h5h"]
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_37h5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
