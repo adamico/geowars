@@ -2,21 +2,23 @@ class_name PlayerCapture
 extends State
 
 @export var player: Player
-@onready var Capture = preload("res://scenes/capture.tscn")
+@onready var capture = preload("res://scenes/capture.tscn")
+@onready var capture_action = %CaptureAction
 
 func Enter():
 	if player:
 		player.capturing = true
 		player.capture_time = player.capture_duration
 		Debug.SetCharacterState("Capturing")
+		capture_action.modulate = Data.PLAYER_COLORS[player.player_number - 1]
 
 
 func Exit():
-	%CaptureAction.hide()
+	capture_action.hide()
 
 
 func Physics_Update(delta: float):
-	%CaptureAction.show()
+	capture_action.show()
 	if Input.is_action_just_released("capture"):
 		player.capture_time = 3
 		Transitioned.emit(self, "idle")
@@ -29,7 +31,7 @@ func Physics_Update(delta: float):
 		%Right.scale = Vector2(1, expression)
 		%Left.scale = Vector2(1, expression)
 	else:
-		player.captured.emit(player.player_number, Capture, player.position)
+		player.captured.emit(player.player_number, capture, player.position)
 		player.capture_time = 3
 		Transitioned.emit(self, "idle")
 

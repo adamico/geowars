@@ -4,6 +4,12 @@ var cell_size_number: int = 64
 var cell_size = Vector2i(cell_size_number, cell_size_number)
 var captured_cells = [[], [], [], []]
 
+const PLAYER_COLORS := [
+	Color(0, 0, 1, 0.5),
+	Color(1, 0, 0, 0.5),
+	Color(0, 1, 0, 0.5),
+	Color(0.78, 0.78, 0, 0.5)
+]
 
 func set_captured_cell_for_player(player_number: int, pos: Vector2i) -> void:
 	var cell = cell_coords(pos)

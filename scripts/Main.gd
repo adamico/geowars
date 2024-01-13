@@ -24,10 +24,3 @@ func draw_grid():
 		draw_line(Vector2(0, y * cell_size.y),
 			Vector2(grid_size.x * cell_size.x, y * cell_size.y),
 			Color.DARK_GRAY, 2.0)
-
-
-func _on_player_captured(player_number, capture_scene, pos):
-	var capture = capture_scene.instantiate()
-	capture.setup(pos)
-	$World.add_sibling(capture)
-	Data.set_captured_cell_for_player(player_number, pos)

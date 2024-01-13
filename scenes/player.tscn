@@ -16,6 +16,7 @@ size = Vector2(32, 32)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_26y8w")
+player_number = 4
 
 [node name="MovementValidation" parent="." instance=ExtResource("2_cv3n4")]
 unique_name_in_owner = true
@@ -53,7 +54,7 @@ player = NodePath("../..")
 
 [node name="CaptureAction" type="Node2D" parent="."]
 unique_name_in_owner = true
-modulate = Color(1, 0, 0, 0.580392)
+modulate = Color(0.780392, 0.780392, 0, 0.501961)
 
 [node name="Up" type="ColorRect" parent="CaptureAction"]
 unique_name_in_owner = true
