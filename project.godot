@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Debug="*res://scenes/debug.tscn"
-DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 Data="*res://scenes/data.tscn"
 Gui="*res://scenes/ui/gui.tscn"
 
@@ -30,7 +29,7 @@ window/dpi/allow_hidpi=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
+enabled=PackedStringArray("res://addons/nklbdev.importality/plugin.cfg")
 
 [input]
 
