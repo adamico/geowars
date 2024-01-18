@@ -1,0 +1,77 @@
+geo arena plan
+
+- what's the vision?
+  - in a far future humans are bored and entertain themselves by betting on robot arena fights
+  - one day an experimental cyborg robot goes rogue and escapes human control
+  - this rogue cyborg has to fight other human controlled robots in order to escape the arena
+
+- what do we need to implement?
+  - core elements:
+    - DONE: basic player sprite
+    - DONE: grid based movement
+    - DONE: player captures grid cells
+    - DONE: basic tileset
+    - 4 level layouts
+    - player shoots bullets
+    - player movement animation
+    - player capture animation
+    - 3 different enemies sprites
+    - player bullets / enemies collision
+    - enemies moving towards the player
+    - enemies/player collision
+    - enemies/enemies collision
+    - enemies shoot bullets
+    - enemies bullets / player collision
+    - player loses health and dies
+    - minimalistic GUI
+    - score system
+    - main loop state machine (title, options, game)
+    - game loop state machine (play, death, gameover)
+    - play loop state machine (before level start, level playing, level complete)
+    - level timer
+    - enemies spawning system
+    - loot system
+    - powerup system
+    - player morph system
+    - sound and music
+
+  - juicyness
+    - particles
+    - camera shake
+    - animation
+    - cool explosions and particles
+  
+  - AI
+  - procedural generation
+
+*** gameplay
+- each level has a timer (10 minutes?)
+- in the allotted time the player must:
+  - capture at least 51% of the level squares (side reward establish a safe zone and get powerups)
+  - stay alive by defeating enemies
+  - collect special loot dropped by enemies (to get different forms (line, zig zag, angle, square))
+- level is finished when the timer reaches 0
+- at specific intervals:
+  - enemies spawn and behave in a specific way according to their type
+  - enemies aggro the player when he tries capturing squares
+  - enemies of the same type defend their comrades when aggroed
+  - powerups spawn in pseudo-random grid cell positions
+
+*** game modes 
+  - arcade -> 3 or 4 levels in a specific arena form and then a boss (square arena, cross, isles, 2 rectangles separated by bridges)
+  - battle royale -> choose arena, 2 or more players, choose powers etc.
+  - infinite mode -> player retains powers between levels
+
+- bonus powers : speed, capture speed, shoot
+- rare bonus : x3 size, god mode, quad damage,
+
+- monster types : stationary, roaming fast and slow, shooting, sneaker
+
+- boss monsters are adapted to each arena form
+
+Xxxxxx  xxxxx    x    xx xx  xxxxx
+Xxxxxx  xxxxx    x.   xx xx. x   x
+Xxxxxx   x x   xxxxx         x x x
+Xxxxxx  xxxxx    x.   xx xx. x   x
+xxxxxx  xxxxx    x.   xx xx. xxxxx  
+
