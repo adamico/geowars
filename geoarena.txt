@@ -1,5 +1,14 @@
 geo arena plan
 
+- what's the target audience?
+  - casual audience => guidance
+  - enthusiasts => challenge, original ideas
+
+- important factors to make people play the game:
+  - onboarding => tutorial, campaign mode, story
+  - scoring => 
+  - difficulty => multiple diff levels/ranks
+
 - what's the vision?
   - in a far future humans are bored and entertain themselves by betting on robot arena fights
   - one day an experimental cyborg robot goes rogue and escapes human control
@@ -11,10 +20,10 @@ geo arena plan
     - DONE: grid based movement
     - DONE: player captures grid cells
     - DONE: basic tileset
-    - 4 level layouts
+    - DONE: 4 level layouts
     - player shoots bullets
     - player movement animation
-    - player capture animation
+    - improve player capture animation
     - 3 different enemies sprites
     - player bullets / enemies collision
     - enemies moving towards the player
@@ -75,3 +84,42 @@ Xxxxxx   x x   xxxxx         x x x
 Xxxxxx  xxxxx    x.   xx xx. x   x
 xxxxxx  xxxxx    x.   xx xx. xxxxx  
 
+Pico8 todo
+
+-- ★todo★
+
+-- add key as loot to activate
+--  portal to next level
+
+-- more level layouts
+
+-- more enemies
+-- monster level pools
+-- end game
+
+-- add k powerup to retain
+--   s,c,l
+
+-- add f powerup to freeze mobs
+
+-- add r powerup for radar
+
+-- add rare loot to retain size
+--  after death
+
+-- zoundz
+--  size up
+
+-- merge all actors in
+--  one function
+-- game modes
+-- improve endlevel
+-- improve capture anim
+-- improve shoot graphics
+-- preroll level
+
+-- achievements
+-- explodeval
+-- add juiciness
+-- enlarge bullets with laser power
+-- logo

@@ -22,5 +22,5 @@ func Update(_delta):
 		Transitioned.emit(self, "idle")
 		
 		
-func shoot(dir):
+func shoot(_dir):
 	pass

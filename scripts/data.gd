@@ -1,5 +1,7 @@
 extends Node
 
+var level: int = randi_range(1,4)
+
 var cell_size_number: int = 64
 var cell_size = Vector2i(cell_size_number, cell_size_number)
 var captured_cells = [[], [], [], []]

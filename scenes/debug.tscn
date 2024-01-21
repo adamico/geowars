@@ -20,7 +20,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -15.0
-offset_bottom = 10.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 18
@@ -61,26 +61,14 @@ text = "CaptureTime:"
 [node name="CTValue" type="Label" parent="Control/DebugBox/DebugParams/CaptureTime"]
 layout_mode = 2
 
-[node name="CellPositionX" type="HBoxContainer" parent="Control/DebugBox/DebugParams"]
+[node name="CanCapture" type="HBoxContainer" parent="Control/DebugBox/DebugParams"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="CPXLabel" type="Label" parent="Control/DebugBox/DebugParams/CellPositionX"]
+[node name="CCLabel" type="Label" parent="Control/DebugBox/DebugParams/CanCapture"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "X:"
+text = "CanCapture:"
 
-[node name="CPXValue" type="Label" parent="Control/DebugBox/DebugParams/CellPositionX"]
-layout_mode = 2
-
-[node name="CellPositionY" type="HBoxContainer" parent="Control/DebugBox/DebugParams"]
-layout_mode = 2
-theme_override_constants/separation = 5
-
-[node name="CPYLabel" type="Label" parent="Control/DebugBox/DebugParams/CellPositionY"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Y:"
-
-[node name="CPYValue" type="Label" parent="Control/DebugBox/DebugParams/CellPositionY"]
+[node name="CCValue" type="Label" parent="Control/DebugBox/DebugParams/CanCapture"]
 layout_mode = 2

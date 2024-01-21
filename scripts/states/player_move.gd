@@ -36,5 +36,4 @@ func move(dir):
 		movement_tween.move_time = 1.0/animation_speed
 		movement_tween.run(player, global_position + inputs[dir] * tile_size)
 		await movement_tween.tween.finished
-		Debug.SetCellPosition(global_position, tile_size)
 		Transitioned.emit(self, 'idle')

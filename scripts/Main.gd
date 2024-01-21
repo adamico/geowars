@@ -7,6 +7,16 @@ var cell_size: Vector2i = Data.cell_size
 var cell_size_number: int = Data.cell_size_number
 
 
+func _ready():
+	var background = load("res://scenes/background.tscn").instantiate()
+	add_child(background)
+
+	var world = load("res://scenes/world/world.tscn").instantiate()
+	add_child(world)
+	#TODO: add stars in space
+	pass
+
+
 func initialize_grid():
 	grid_size = Vector2i(get_viewport_rect().size) / cell_size
 	astar_grid.size = grid_size
